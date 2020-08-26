@@ -30,6 +30,7 @@ export default {
           'used FTP',
           'used vim',
           'gotten off Twitter',
+          'kept the bitcoin',
       ],
       option: null,
     }
