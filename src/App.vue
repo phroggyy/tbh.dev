@@ -27,6 +27,9 @@ export default {
           'listened',
           'used server-side rendering',
           'worn a mask',
+          'used FTP',
+          'used vim',
+          'gotten off Twitter',
       ],
       option: null,
     }
