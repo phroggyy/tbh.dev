@@ -1,10 +1,17 @@
 <template>
   <div id="app">
-    <h1>To be honest...</h1>
-    <p>
-      You should've just
-      <span class="highlighted">{{ option }}</span>
-    </p>
+    <div></div>
+    <main class="content">
+      <h1>To be honest...</h1>
+      <p>
+        You should've just
+        <span class="highlighted">{{ option }}</span>
+      </p>
+    </main>
+    <footer>
+      <p>Built by <a href="https://blog.leosjoberg.com">Leo Sjöberg</a></p>
+      <a href="https://twitter.com/phroggyy"><i class="fab fa-twitter"></i></a>
+    </footer>
   </div>
 </template>
 
@@ -17,6 +24,9 @@ export default {
           'used a VPS',
           'become a woodworker',
           'moved to Bali',
+          'listened',
+          'used server-side rendering',
+          'worn a mask',
       ],
       option: null,
     }
@@ -31,6 +41,7 @@ export default {
 body, html {
   width: 100%;
   height: 100%;
+  margin: 0;
 }
 
 #app {
@@ -39,21 +50,27 @@ body, html {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "header" "content" "footer";
 }
 
-h1 {
+main h1 {
   font-size: 24px;
   font-weight: normal;
   color: #4A5568;
 }
-p {
+main p {
   font-size: 42px;
+}
+
+.content {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .highlighted {
@@ -61,5 +78,17 @@ p {
   font-weight: 600;
   text-decoration: underline;
   text-decoration-color: #ED8936;
+}
+
+footer {
+  grid-area: footer;
+}
+
+footer a:nth-child(2) {
+  font-size: 30px;
+}
+
+.fa-twitter {
+  color: #1DA1F2;
 }
 </style>
